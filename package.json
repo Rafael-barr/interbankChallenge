@@ -1,0 +1,25 @@
+{
+  "name": "interbank_challenge",
+  "version": "1.0.0",
+  "description": "Test challenge",
+  "main": "cypress.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "test:chrome": "npx cypress open --browser chrome --e2e",
+    "test:firefox": "npx cypress open --browser firefox --e2e"
+  },
+  "keywords": [
+    "e2e",
+    "cypress",
+    "challenge"
+  ],
+  "author": "Rafael Barrios",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^13.10.0"
+  },
+  "dependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^20.0.5",
+    "@cypress/webpack-preprocessor": "^6.0.1"
+  }
+}
