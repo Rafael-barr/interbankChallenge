@@ -74,6 +74,24 @@ Then('debería ver resultados relacionados con {string}', (producto) => {
   cy.contains(producto).should('be.visible');
 });
 
+### Generacion de reportes con mochawesome
+- Primero, necesitas instalar mochawesome, mochawesome-merge, y mochawesome-report-generator.
+- Se debe configurar el config.json con el siguiente:
+{
+  "reporter": "mochawesome",
+  "reporterOptions": {
+    "reportDir": "cypress/reports",
+    "overwrite": false,
+    "html": false,
+    "json": true
+  }
+}
+- Ademas agregar el siguiente script en nuestro package.json 
+"scripts": {
+  "merge-reports": "mochawesome-merge cypress/reports/*.json > cypress/reports/report.json && marge cypress/reports/report.json -f report -o cypress/reports"
+}
+
+
 ### Contribuciones
 - Las contribuciones son bienvenidas. Por favor, abre un issue para discutir cualquier cambio que desees realizar. Puedes clonar el repositorio, crear una nueva rama para tu feature, hacer tus cambios y enviar un pull request.
 
