@@ -2,6 +2,7 @@ export class VisitPage {
   constructor() {
     this.selectors = {
       header: ".nav-header > .nav-bounds",
+      argOption: "#AR",
       logo: ".nav-logo",
       searchInput: "#cb1-edit",
       subscribeButton: ".exhibitor__picture > img",

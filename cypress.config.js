@@ -30,6 +30,7 @@ async function setupNodeEvents(on, config) {
   await preprocessor.addCucumberPreprocessorPlugin(on, config);
 
   return config;
+  
 }
 
 module.exports = defineConfig({
