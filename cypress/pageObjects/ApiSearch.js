@@ -2,8 +2,9 @@ export class ApiSearchPage {
     constructor() { }
     
 
-    sendResquest() {
-    const apiUrl = 'https://api.mercadolibre.com/sites/MLA/search?';
+  sendResquest() {
+    const env = Cypress.env("Test")[0];
+    const apiUrl = env.api_url;
         cy.request({
             url: apiUrl, method: "GET",
             headers: {

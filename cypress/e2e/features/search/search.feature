@@ -8,7 +8,8 @@ Feature: Searching product
         Examples:
         | word |
         | iPhone 13 |
-        | apple |
-        | error |
+        | Apple |
+        | Error |
+       
         
     

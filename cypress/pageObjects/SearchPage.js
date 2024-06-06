@@ -9,7 +9,7 @@ export class SearchPage {
       smartphoneOption:
         ":nth-child(6) > ul > :nth-child(3) > .ui-search-link > .ui-search-filter-name",
       iphone13Option:
-        ":nth-child(5) > ul > :nth-child(8) > .ui-search-link > .ui-search-filter-name",
+        ":nth-child(5) > ul > :nth-child(7) > .ui-search-link > .ui-search-filter-name",
       topSearchTitle: ".ui-search-top-keywords__list > :nth-child(1)",
       top1: ":nth-child(2) > .ui-search-top-keywords__link",
       top2: ":nth-child(3) > .ui-search-top-keywords__link",
@@ -19,7 +19,7 @@ export class SearchPage {
         ".ui-search-result__content-wrapper > .ui-search-item__group--title",
       buyButton: "#\\:R15d3a6c4um\\:",
       loginCard: ":R17:",
-      cardTitle: "#:R17: > div.center-card__header > h1",
+      cardTitle: ".center-card__title",
       createAccButton: "#registration-link > span",
       loginButton: "#\\:R577\\: > span",
     };
@@ -34,7 +34,7 @@ export class SearchPage {
     cy.get(this.selectors.iconButton).should("be.visible").click();
     this.validateSearchResultsComponent(product);
     cy.get(this.selectors.result01).first().click();
-    cy.get(this.selectors.buyButton).first()
+    cy.get(this.selectors.buyButton).first().click();
   }
 
   anotherPathResult(product) {
@@ -50,15 +50,17 @@ export class SearchPage {
       .contains("Celulares y Smartphones")
       .click();
     cy.get(this.selectors.iphone13Option)
+      .scrollIntoView()
       .should("be.visible")
       .contains("iPhone 13")
       .click();
     cy.get(this.selectors.result01).first().click();
-    cy.get(this.selectors.buyButton).first()
+    cy.get(this.selectors.buyButton).first().click();
   }
 
   tryLogin() {
-    cy.get(this.selectors.buyButton)
+    cy.get('body');
+    cy.get(this.selectors.cardTitle).should('be.visible').contains('¡Hola! Para comprar, ingresá a tu cuenta');
   }
 
   validateHeaderVisibility(product) {

@@ -19,5 +19,10 @@ When(/^I perform a search by name (.*)$/, function (product) {
 Then(
   "I should validate that I am get a list of the only mentioned",
   function () {
-      searchPage.tryLogin();
+    cy.origin('https://www.mercadolibre.com', { args: { searchPage } }, ({ searchPage }) => {
+      cy.get('body');
+      cy.get('.center-card__title').should('be.visible').contains('¡Hola! Para comprar, ingresá a tu cuenta');
+      
+
+    });  
   });
